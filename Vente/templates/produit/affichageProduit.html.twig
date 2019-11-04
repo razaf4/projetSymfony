@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block corps %}
+    <h4>Liste des produits</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Numero</td>
+                <td>Libelle</td>
+                <td>Quantite</td>
+                <td>PU</td>
+           
+            </tr>
+        </thead>
+        <tbody>
+            {% for produite in produites %}
+               <tr> 
+                     <td>{{produite.Numero}}</td>
+                    <td>{{produite.Libelle}}</td>
+                    <td>{{produite.Quantite}}</td>
+                    <td>{{produite.Pu}}</td>
+                    <td><a href="{{path('deleteProduit',{id:produite.id}) }}">Supprimer</a></td>
+                    <td><a href="{{path('editProduit',{id:produite.id}) }}">Editer</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  
+ {% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% form_theme formClient 'bootstrap_4_layout.html.twig' %}
+
+
+  {% block stylesheets %}<link rel="stylesheet" href="{{ asset('style/menuclient.css') }}"/>{% endblock %}
+ {% block corps %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <legend id="centre">Veuillez completer tout le champ</legend>
+                 {{form_start(formClient)}}
+                 {{form_row(formClient.nom)}}
+                 {{form_row(formClient.adresse)}}
+                 {{form_row(formClient.telephone)}}
+                     
+                <button type="submit" class="btn btn-success">Ajouter</button>
+                <a href="{{path('affiche')}}" class="btn btn-primary">Liste des Clients</a>
+                {{form_end(formClient)}}
+                
+            </div>
+            
+        </div>    
+    </div>
+ {% endblock %}

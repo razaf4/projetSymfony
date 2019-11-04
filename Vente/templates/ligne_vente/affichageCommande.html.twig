@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('style/rechercherCommande.css') }}"/>{% endblock %}
+{% block corps %}
+    <div class="container">
+    <h4>Liste des Commandes de clients</h4>
+        
+        <form class="form-search" id="rechercher">
+            <div class="input-append">
+                <input type="text" class="search-query">
+                <button class="btn btn-primary" type="submit">Recherche</button>
+                <a href="" class="btn btn-success">Imprimer</a>        
+            </div>
+        </form>
+        
+        </div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>Client</td>
+                <td>Produit</td>
+                <td>Quantite</td>
+                <td>Date d'achats</td>
+           
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+  
+ {% endblock %}

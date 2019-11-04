@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% form_theme formCommande 'bootstrap_4_layout.html.twig' %}
+
+ {% block corps %}
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <legend>Faire votre commande</legend>
+                 {{form_start(formCommande)}}
+                 {{form_row(formCommande.id_client)}}
+                 {{form_row(formCommande.id_produit)}}
+                 {{form_row(formCommande.quantite_achat)}}
+                 {{form_row(formCommande.date_achat)}}
+                
+                <button type="submit" class="btn btn-success">Valider</button>
+                <a href="{{path('affichageCommande')}}" class="btn btn-primary">Liste des Commandes</a>
+                {{form_end(formCommande)}}
+                
+            </div>
+           
+        </div>    
+    </div>
+ {% endblock %}
